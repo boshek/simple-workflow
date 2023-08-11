@@ -1,0 +1,16 @@
+name: Dispatch Workflow
+
+on:
+  repository_dispatch:
+    types: [cool-event] # Replace with your custom event type name if needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Run a simple command
+      run: echo "Repository Dispatch Triggered!"
