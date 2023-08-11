@@ -3,6 +3,12 @@ name: Dispatch Workflow
 on:
   push:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      cool_input:
+        description: 'An input'
+        required: true
+        default: 'coolevent'
   repository_dispatch:
     types: [coolevent] # Replace with your custom event type name if needed
 
@@ -16,3 +22,6 @@ jobs:
 
     - name: Run a simple command
       run: echo "Repository Dispatch Triggered!"
+    
+    - name: Run the input
+      run: echo ${{ github.event.inputs.cool_input || 'No input provided' }}
