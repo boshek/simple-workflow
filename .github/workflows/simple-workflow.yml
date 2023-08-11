@@ -9,8 +9,6 @@ on:
         description: 'An input'
         required: true
         default: 'coolevent'
-  repository_dispatch:
-    types: [coolevent] # Replace with your custom event type name if needed
 
 jobs:
   build:
